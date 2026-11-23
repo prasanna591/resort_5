@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-11-23T00:00:00.000Z",
+  "title": "Design System: PSM Resort",
+  "extensions": {
+    "colorMeta": {
+      "paper": { "role": "neutral", "displayName": "Uncoated Paper", "canonical": "#ede7db" },
+      "paper-deep": { "role": "neutral", "displayName": "Deep Paper", "canonical": "#e2d9c9" },
+      "paper-light": { "role": "neutral", "displayName": "Light Paper", "canonical": "#f3eee5" },
+      "ink": { "role": "primary", "displayName": "Ink Green-Black", "canonical": "#1b211e" },
+      "moss": { "role": "secondary", "displayName": "Moss Green", "canonical": "#4a5a4c" },
+      "rust": { "role": "tertiary", "displayName": "Rust Red", "canonical": "#a45436" },
+      "night": { "role": "surface", "displayName": "Night Moss", "canonical": "#26342a" }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Page statements and section openers." },
+      "body": { "displayName": "Body", "purpose": "Narrative copy and form values." },
+      "label": { "displayName": "Label", "purpose": "Folios, plate captions, nav, form labels." }
+    },
+    "shadows": [
+      { "name": "seal-shadow", "value": "0 8px 24px rgba(27,33,30,0.15)", "purpose": "The single raised object: the bath seal." }
+    ],
+    "motion": [
+      { "name": "settle", "value": "cubic-bezier(.2,.7,.2,1)", "purpose": "Reveals and state transitions." },
+      { "name": "plate-draw", "value": "cubic-bezier(.3,.7,.2,1)", "purpose": "Contour line drawing." }
+    ],
+    "breakpoints": [
+      { "name": "wide", "value": "1180px" },
+      { "name": "tablet", "value": "860px" },
+      { "name": "phone", "value": "600px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Square, ink-filled action used for enquiries.",
+      "html": "<button class=\"ds-btn-primary\">ENQUIRE</button>",
+      "css": ".ds-btn-primary { background: #1b211e; color: #f3eee5; border: 1px solid #1b211e; border-radius: 0; padding: 10px 16px; font: 11px Karla, Arial, sans-serif; letter-spacing: .14em; text-transform: uppercase; transition: background .3s, color .3s; } .ds-btn-primary:hover { background: #a45436; border-color: #a45436; } .ds-btn-primary:focus-visible { outline: 2px solid #a45436; outline-offset: 4px; }"
+    },
+    {
+      "name": "Field",
+      "kind": "input",
+      "refersTo": "field",
+      "description": "Underline-only input on transparent ground.",
+      "html": "<label class=\"ds-field\"><span>Arrival</span><input type=\"date\" /></label>",
+      "css": ".ds-field { display: grid; gap: 5px; } .ds-field span { font: 10px Karla, Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: #4a5a4c; } .ds-field input { background: transparent; border: 0; border-bottom: 1px solid rgba(27,33,30,.22); border-radius: 0; padding: 7px 0; color: #1b211e; caret-color: #a45436; } .ds-field input:focus { outline: none; border-bottom-color: #a45436; } .ds-field input:user-invalid { border-bottom-color: #a45436; }"
+    },
+    {
+      "name": "Tab Rail",
+      "kind": "nav",
+      "description": "Notched index tabs over the hero photograph.",
+      "html": "<nav class=\"ds-tabs\"><a href=\"#rooms\">02 Rooms</a><a href=\"#table\">03 Table</a></nav>",
+      "css": ".ds-tabs { display: grid; gap: 2px; } .ds-tabs a { background: rgba(237,231,219,.94); color: #1b211e; padding: 9px 34px 9px 14px; font: 10px Karla, Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; clip-path: polygon(12px 0,100% 0,100% 100%,12px 100%,0 50%); } .ds-tabs a:hover, .ds-tabs a.is-current { background: #a45436; color: #fff; } .ds-tabs a:focus-visible { outline: 2px solid #a45436; outline-offset: 4px; }"
+    },
+    {
+      "name": "Plate",
+      "kind": "card",
+      "description": "Numbered photograph with a hairline caption row.",
+      "html": "<figure class=\"ds-plate\"><div class=\"ds-plate-frame\"><img src=\"/images/peaks.jpg\" alt=\"Mountain peaks\" /></div><figcaption><span class=\"ds-plate-no\">Pl. 02</span><span>Valley side</span></figcaption></figure>",
+      "css": ".ds-plate { margin: 0; } .ds-plate-frame { overflow: hidden; background: #e2d9c9; } .ds-plate img { display: block; width: 100%; aspect-ratio: 4/3; object-fit: cover; } .ds-plate figcaption { display: flex; gap: 16px; padding-top: 10px; font: 10px Karla, Arial, sans-serif; letter-spacing: .12em; text-transform: uppercase; color: #4a5a4c; } .ds-plate-no { color: #a45436; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Alpine Field Journal",
+    "overview": "An uncoated-paper world built around the rituals of a small mountain house. The page reads as a bound record of a place: folio labels, plate numbers, hairline rules, and photographs tipped in with printed margins. It is quiet but not timid — scale does the work where ornament would. The palette is drawn from paper, ink, moss, and a single rust reserved for numbers, live state, and emphasis. Depth comes from paper layers and photography, never from floating cards. Motion is authored sparingly and settles into stillness.",
+    "keyCharacteristics": [
+      "Paper-first surfaces with hairline rules and generous margins",
+      "Oversized display serif contrasted with tiny tracked labels",
+      "Photographs presented as numbered plates with captions",
+      "One rust accent used as a signal, never as decoration",
+      "Flat surfaces; depth from layering and scale"
+    ],
+    "rules": [
+      { "name": "The Rust Is a Signal Rule", "body": "Rust appears on numbers, current state, and action only. It never fills a large field.", "section": "colors" },
+      { "name": "The Label Whisper Rule", "body": "Labels stay below 12px and widely tracked; headings carry the volume.", "section": "typography" }
+    ],
+    "dos": [
+      "Do keep the rust accent to signals and numbers.",
+      "Do present imagery with plate numbers and captions.",
+      "Do keep all paper surfaces flat and separated by hairlines.",
+      "Do use self-hosted Gloock and Karla only."
+    ],
+    "donts": [
+      "Don't add rounded cards, gradients, or glass panels.",
+      "Don't use a centred hero over a row of equal amenity cards.",
+      "Don't label illustrative prices or availability as real.",
+      "Don't copy imagery or branding from an existing hotel site."
+    ]
+  }
+}
